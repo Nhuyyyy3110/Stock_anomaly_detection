@@ -1,0 +1,23 @@
+data:
+  raw_stock_file: "COPHIEU_BANLE_TIEUDUNG(2).xlsx"
+  raw_news_file: "K4_CRAWL_NHOM_4_BAN_LE_TIEU_DUNG_DUOC(2).xlsx"
+  date_column: "date"
+  ticker_column: "ticker"
+
+features:
+  rolling_windows: [5, 10, 20]
+  return_columns:
+    - "close"
+    - "volume"
+
+scaling:
+  method: "standard"
+
+anomaly_detection:
+  zscore_threshold: 3.0
+  knn_neighbors: 20
+  contamination: 0.05
+
+news_linking:
+  window_days_before: 3
+  window_days_after: 3
