@@ -1,33 +1,31 @@
-# Phat hien bat thuong giao dich co phieu va lien ket tin tuc
+# Stock Anomaly Detection
 
-Du an xay dung pipeline phat hien cac phien giao dich co phieu bat thuong trong nhom ban le, tieu dung, duoc va lien ket voi tin tuc doanh nghiep gan thoi diem bat thuong.
+Xây dựng hệ thống phát hiện bất thường trong giao dịch cổ phiếu
+và phân tích mối liên hệ với tin tức doanh nghiệp.
 
-## Cau truc thu muc
+## Mục tiêu
 
-```text
-stock_anomaly_detection/
-├── configs/              # Tham so pipeline
-├── data/                 # Du lieu raw, interim, processed
-├── models/               # Scaler va model da train
-├── notebooks/            # Notebook phan tich theo tung buoc
-├── src/                  # Ma nguon xu ly du lieu, feature, anomaly, news
-├── dashboard/            # Ung dung Streamlit
-├── tests/                # Unit tests
-├── results/              # Bang, hinh va bao cao dau ra
-├── logs/                 # Log pipeline
-├── requirements.txt
-└── run_pipeline.py
-```
+- Làm sạch dữ liệu OHLCV của 14 mã cổ phiếu.
+- Tạo đặc trưng giao dịch.
+- Phát hiện bất thường bằng Z-score và KNN.
+- Liên kết phiên bất thường với tin tức doanh nghiệp.
+- Hiển thị kết quả bằng Streamlit.
 
-## Chay nhanh
+## Dữ liệu
+
+Dự án sử dụng:
+
+- Dữ liệu OHLCV của 14 mã cổ phiếu.
+- Dữ liệu tin tức doanh nghiệp.
+- Khoảng thời gian phân tích giá: 05/05/2025–04/09/2026.
+- Khoảng thời gian tin dùng để liên kết: 01/05/2025–04/09/2026.
+
+Dữ liệu thô không được lưu trên GitHub. Người dùng cần đặt file
+vào thư mục `data/raw/`.
+
+## Cài đặt
+
+Tạo môi trường ảo:
 
 ```bash
-pip install -r requirements.txt
-python run_pipeline.py
-```
-
-Dashboard:
-
-```bash
-streamlit run dashboard/app.py
-```
+python -m venv .venv
