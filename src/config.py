@@ -32,6 +32,7 @@ def first_existing_path(candidates: list[Path]) -> Path:
 STOCK_SOURCE_FILE = first_existing_path(STOCK_SOURCE_CANDIDATES)
 NEWS_SOURCE_FILE = first_existing_path(NEWS_SOURCE_CANDIDATES)
 
-STOCK_CLEANED_FILE = INTERIM_DATA_DIR / "stock_data_cleaned.pkl"
-NEWS_CLEANED_FILE = INTERIM_DATA_DIR / "news_data_cleaned.pkl"
-NEWS_TICKER_EXPLODED_FILE = INTERIM_DATA_DIR / "news_ticker_exploded.pkl"
+STOCK_CLEANED_FILE = INTERIM_DATA_DIR / "stock_clean.parquet"
+NEWS_CLEANED_FILE = INTERIM_DATA_DIR / "news_clean.parquet"
+NEWS_TICKER_EXPLODED_FILE = INTERIM_DATA_DIR / "news_ticker_exploded.parquet"
+STOCK_FEATURES_FILE = PROCESSED_DATA_DIR / "stock_features.parquet"
