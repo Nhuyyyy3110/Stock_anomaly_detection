@@ -20,6 +20,7 @@ def test_processed_data_paths_use_parquet():
     assert config.NEWS_CLEANED_FILE.suffix == ".parquet"
     assert config.NEWS_TICKER_EXPLODED_FILE.suffix == ".parquet"
     assert config.STOCK_FEATURES_FILE.suffix == ".parquet"
+    assert config.ZSCORE_ANOMALIES_FILE.suffix == ".parquet"
 
 
 def test_parquet_round_trip(tmp_path):
